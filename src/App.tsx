@@ -1,14 +1,15 @@
+import "./firebase/init"
 import Explore from "./pages/Explore";
 import Following from "./pages/Following";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Post from "./pages/Post";
+import Register from "./pages/Register";
+import RequireAuth from "./components/RequireAuth";
 import Root from "./pages/Root";
 import User from "./pages/User";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import RequireAuth from "./components/RequireAuth";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
 
 const router = createBrowserRouter([
   {

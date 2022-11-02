@@ -1,7 +1,18 @@
-import React from 'react'
+import Button from "../../components/Button";
+import { SignInWithProvider } from "../../firebase/auth";
 
 export default function Register() {
+  const handleGoogleLogin = () => {
+    SignInWithProvider("google");
+  };
+  const handleGithubLogin = () => {
+    SignInWithProvider("github");
+  };
+
   return (
-    <div>Register</div>
-  )
+    <>
+      <Button onClick={handleGoogleLogin}>Login Google</Button>
+      <Button onClick={handleGithubLogin}>Login Github</Button>
+    </>
+  );
 }

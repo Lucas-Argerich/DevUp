@@ -1,5 +1,4 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCHSR41fHXVLSTK1byNxAMVyPimLLsdCuk",
@@ -8,9 +7,8 @@ const firebaseConfig = {
   storageBucket: "devup-9db8b.appspot.com",
   messagingSenderId: "71890776502",
   appId: "1:71890776502:web:1c3deda3bda6ddf6205117",
-  measurementId: "G-XJREM1WJ0V"
+  measurementId: "G-XJREM1WJ0V",
 };
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app)
+initializeApp(firebaseConfig);
