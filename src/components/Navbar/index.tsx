@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import ArrowDown from "../../assets/icons/ArrowDown";
 import ProfilePicture from "../../assets/icons/ProfilePicture";
+import Button from "../Button";
 
 const Header = styled.header`
   align-items: center;
@@ -28,6 +29,7 @@ const Nav = styled.nav`
 const UserData = styled.div`
   align-items: center;
   display: flex;
+  gap: 10px;
 `;
 
 const UserImage = styled.div`
@@ -35,17 +37,6 @@ const UserImage = styled.div`
   border-radius: 50%;
   height: 40px;
   width: 40px;
-`;
-
-const Button = styled.div`
-  align-items: center;
-  border-radius: 20px;
-  border: 1px solid var(--font-primary);
-  display: flex;
-  font-weight: 600;
-  height: 40px;
-  margin: 0 10px;
-  padding: 0 20px;
 `;
 
 type propTypes = {
@@ -94,9 +85,9 @@ export default function Navbar({ nav }: propTypes): JSX.Element {
           </>
         ) : (
           <>
-            <Link to="/">
-              <Button>Sign Up</Button>
-            </Link>
+            <Button to="/" outlined>
+              Sign Up
+            </Button>
             <ProfilePicture />
           </>
         )}
