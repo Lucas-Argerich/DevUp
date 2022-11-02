@@ -6,6 +6,9 @@ import Post from "./pages/Post";
 import Root from "./pages/Root";
 import User from "./pages/User";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RequireAuth from "./components/RequireAuth";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -14,10 +17,14 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { index: true, element: <Home /> },
-      { path: "user/:id", element: <User /> },
-      { path: "post/:id", element: <Post /> },
-      { path: "following", element: <Following /> },
-      { path: "explore", element: <Explore /> },
+      { path: "login", element: <Login />},
+      { path: "register", element: <Register />},
+      { element: <RequireAuth />, children: [
+        { path: "user/:id", element: <User /> },
+        { path: "post/:id", element: <Post /> },
+        { path: "following", element: <Following /> },
+        { path: "explore", element: <Explore /> },
+      ]}
     ],
   },
 ]);
