@@ -28,7 +28,7 @@ const outlinedStyle = {
   padding: "10px 20px"
 }
 
-export default function Button({ to, children, secondary, outlined }: props) {
+export default function LinkButton({ to, children, secondary, outlined }: props) {
   return (
     <StyledLink to={to} style={secondary ? secondaryStyle : outlined ? outlinedStyle : primaryStyle}>
       {children}

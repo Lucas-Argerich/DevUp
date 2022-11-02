@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import HomeLogo from "../../assets/icons/HomeLogo";
-import Button from "../../components/Button";
+import Button from "../../components/LinkButton";
 
 const Wrapper = styled.div`
   margin: 80px 0;

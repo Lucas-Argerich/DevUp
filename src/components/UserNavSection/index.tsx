@@ -1,5 +1,5 @@
 import ArrowDown from "../../assets/icons/ArrowDown";
-import Button from "../Button";
+import Button from "../LinkButton";
 import ProfilePicture from "../../assets/icons/ProfilePicture";
 import styled from "styled-components";
 import { useContext } from "react";
