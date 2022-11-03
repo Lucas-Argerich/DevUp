@@ -2,8 +2,8 @@ import ArrowDown from "../../assets/icons/ArrowDown";
 import Button from "../LinkButton";
 import ProfilePicture from "../../assets/icons/ProfilePicture";
 import styled from "styled-components";
-import { useContext } from "react";
 import { UserContext } from "../../contexts/userContext";
+import { useContext } from "react";
 
 const UserData = styled.div`
   align-items: center;
@@ -22,17 +22,21 @@ export default function UserNavSection() {
 
   return (
     <UserData>
-      {user ? (
+      {user === undefined ? (
         <>
-          <ArrowDown />
-          <UserImage />
+          <ProfilePicture />
         </>
-      ) : (
+      ) : user === null ? (
         <>
           <Button to="/register" outlined>
             Sign Up
           </Button>
           <ProfilePicture />
+        </>
+      ) : (
+        <>
+          <ArrowDown />
+          <UserImage />
         </>
       )}
     </UserData>
