@@ -1,13 +1,13 @@
-import styled from "styled-components";
 import HomeLogo from "../../assets/icons/HomeLogo";
-import Button from "../../components/LinkButton";
+import LinkButton from "../../components/LinkButton";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
-  margin: 80px 0;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 10px;
+  margin: 80px 0;
 `;
 
 const Text = styled.span`
@@ -25,10 +25,10 @@ export default function Home() {
           interact with each others!
         </Text>
       </Wrapper>
-      <Button to="/">Sign Up</Button>
-      <Button to="/" secondary>
+      <LinkButton to="/register">Sign Up</LinkButton>
+      <LinkButton to="/login" secondary>
         Sign In
-      </Button>
+      </LinkButton>
     </>
   );
 }

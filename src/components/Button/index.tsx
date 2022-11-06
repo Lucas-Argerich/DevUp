@@ -17,22 +17,22 @@ const StyledButton = styled.button`
     width: 24px;
     height: 24px;
   }
+`;
 
-  span {
-    margin: 0 auto;
-  }
+const Span = styled.span`
+  margin: 0 auto;
 `;
 
 const IconContainer = styled.div`
-  border-radius: 12px;
-  background: #ffffff;
+  width: 24px;
+  height: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 type Props = {
-  children: JSX.Element;
+  children: string;
   icon?: JSX.Element;
   onClick: () => void;
 };
@@ -41,7 +41,7 @@ export default function Button({ children, icon, onClick }: Props) {
   return (
     <StyledButton onClick={onClick}>
       <IconContainer>{icon}</IconContainer>
-      {children}
+      <Span>{children}</Span>
     </StyledButton>
   );
 }
