@@ -9,6 +9,7 @@
 
 * {
   border: none;
+  box-sizing: border-box;  
   color: var(--font-primary);
   font-family: "Inter", sans-serif;
   font-size: 1rem;
