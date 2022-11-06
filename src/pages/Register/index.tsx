@@ -31,11 +31,12 @@ const Separator = styled.div`
 
   span {
     background: #fff;
-    position: absolute;
+    font-size: 0.875rem;
     left: 50%;
+    padding: 0 10px;
+    position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    padding: 0 10px;
   }
 `;
 
