@@ -1,11 +1,11 @@
 import Button from "../../components/Button";
-import EmailIcon from "../../assets/icons/EmailIcon";
 import GithubIcon from "../../assets/icons/GithubIcon";
 import GoogleIcon from "../../assets/icons/GoogleIcon";
 import HomeLogo from "../../assets/icons/HomeLogo";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { SignInWithProvider } from "../../firebase/auth";
+import LinkButton from "../../components/LinkButton";
 
 const StyledHomeLogo = styled(HomeLogo)`
   margin: 80px 0;
@@ -32,6 +32,8 @@ const StyledLink = styled(Link)`
 `;
 
 export default function Login() {
+  const buttonMinWidth = 300;
+
   return (
     <>
       <StyledHomeLogo />
@@ -42,6 +44,7 @@ export default function Login() {
             SignInWithProvider("google");
           }}
           icon={<GithubIcon />}
+          minWidth={buttonMinWidth}
         >
           Sign in with Github
         </Button>
@@ -50,12 +53,13 @@ export default function Login() {
             SignInWithProvider("github");
           }}
           icon={<GoogleIcon />}
+          minWidth={buttonMinWidth}
         >
           Sign in with Google
         </Button>
-        <Button onClick={() => {}} icon={<EmailIcon />}>
+        <LinkButton minWidth={buttonMinWidth} to="email">
           Sign in with Email
-        </Button>
+        </LinkButton>
         <StyledLink to="/register">
           Don’t have an account? <span>Sign Up</span>
         </StyledLink>

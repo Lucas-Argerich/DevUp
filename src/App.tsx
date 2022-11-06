@@ -1,4 +1,4 @@
-import "./firebase/init"
+import "./firebase/init";
 import Explore from "./pages/Explore";
 import Following from "./pages/Following";
 import Home from "./pages/Home";
@@ -10,6 +10,8 @@ import RequireAuth from "./components/RequireAuth";
 import Root from "./pages/Root";
 import User from "./pages/User";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import EmailRegisterForm from "./components/emailRegisterForm";
+import EmailLoginForm from "./components/emailLoginForm";
 
 const router = createBrowserRouter([
   {
@@ -18,14 +20,29 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { index: true, element: <Home /> },
-      { path: "login", element: <Login />},
-      { path: "register", element: <Register />},
-      { element: <RequireAuth />, children: [
-        { path: "user/:id", element: <User /> },
-        { path: "post/:id", element: <Post /> },
-        { path: "following", element: <Following /> },
-        { path: "explore", element: <Explore /> },
-      ]}
+      {
+        path: "login",
+        children: [
+          { index: true, element: <Login /> },
+          { path: "email", element: <EmailLoginForm /> },
+        ],
+      },
+      {
+        path: "register",
+        children: [
+          { index: true, element: <Register /> },
+          { path: "email", element: <EmailRegisterForm /> },
+        ],
+      },
+      {
+        element: <RequireAuth />,
+        children: [
+          { path: "user/:id", element: <User /> },
+          { path: "post/:id", element: <Post /> },
+          { path: "following", element: <Following /> },
+          { path: "explore", element: <Explore /> },
+        ],
+      },
     ],
   },
 ]);
