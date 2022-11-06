@@ -2,16 +2,20 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledLink = styled(Link)`
-  padding: 10px 40px;
+  align-items: center;
   border-radius: 100px;
+  display: flex;
   font-weight: 600;
+  justify-content: center;
+  padding: 10px 40px;
 `;
 
 type props = {
-  to: string;
   children: string | JSX.Element;
-  secondary?: boolean;
+  minWidth?: number;
   outlined?: boolean;
+  secondary?: boolean;
+  to: string;
 };
 
 const primaryStyle = {
@@ -25,12 +29,28 @@ const secondaryStyle = {
 
 const outlinedStyle = {
   border: "1px solid var(--font-primary)",
-  padding: "10px 20px"
-}
+  padding: "10px 20px",
+};
 
-export default function LinkButton({ to, children, secondary, outlined }: props) {
+export default function LinkButton({
+  children,
+  minWidth,
+  outlined,
+  secondary,
+  to,
+}: props) {
   return (
-    <StyledLink to={to} style={secondary ? secondaryStyle : outlined ? outlinedStyle : primaryStyle}>
+    <StyledLink
+      to={to}
+      style={{
+        minWidth,
+        ...(secondary
+          ? secondaryStyle
+          : outlined
+          ? outlinedStyle
+          : primaryStyle),
+      }}
+    >
       {children}
     </StyledLink>
   );

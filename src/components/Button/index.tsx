@@ -8,7 +8,6 @@ const StyledButton = styled.button`
   font-weight: 600;
   display: flex;
   justify-content: space-between;
-  min-width: 300px;
   align-items: center;
   font-size: 1rem;
   cursor: pointer;
@@ -34,12 +33,13 @@ const IconContainer = styled.div`
 type Props = {
   children: string;
   icon?: JSX.Element;
+  minWidth?: number;
   onClick: () => void;
 };
 
-export default function Button({ children, icon, onClick }: Props) {
+export default function Button({ children, icon, minWidth, onClick }: Props) {
   return (
-    <StyledButton onClick={onClick}>
+    <StyledButton onClick={onClick} style={{ minWidth }}>
       <IconContainer>{icon}</IconContainer>
       <Span>{children}</Span>
     </StyledButton>
