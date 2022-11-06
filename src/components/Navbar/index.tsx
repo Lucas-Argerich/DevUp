@@ -6,7 +6,7 @@ const Header = styled.header`
   align-items: center;
   border-bottom: 1px solid var(--shadow-light);
   display: flex;
-  height: 40px;
+  height: 60px;
   justify-content: space-between;
   padding: 10px 40px;
 `;
