@@ -1,33 +1,32 @@
 import styled from "styled-components";
 
 const StyledButton = styled.button`
-  padding: 10px 40px;
-  background: var(--color-gray);
-  border: none;
-  border-radius: 100px;
-  font-weight: 600;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-size: 1rem;
+  background: var(--color-gray);
+  border-radius: 100px;
+  border: none;
   cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 600;
+  justify-content: center;
+  padding: 10px 40px;
+  position: relative;
 
   svg {
-    width: 24px;
     height: 24px;
+    width: 24px;
   }
 `;
 
-const Span = styled.span`
-  margin: 0 auto;
-`;
-
 const IconContainer = styled.div`
-  width: 24px;
-  height: 24px;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
+  height: 24px;
+  justify-content: center;
+  left: 40px;
+  position: absolute;
+  width: 24px;
 `;
 
 type Props = {
@@ -72,7 +71,7 @@ export default function Button({
       type={type}
     >
       {icon && <IconContainer>{icon}</IconContainer>}
-      <Span>{children}</Span>
+      {children}
     </StyledButton>
   );
 }
