@@ -8,6 +8,7 @@ const StyledLink = styled(Link)`
   font-weight: 600;
   justify-content: center;
   padding: 10px 40px;
+  background: var(--color-gray);
 `;
 
 type props = {
@@ -18,16 +19,15 @@ type props = {
   to: string;
 };
 
-const primaryStyle = {
-  background: "var(--color-gray)",
-};
-
 const secondaryStyle = {
-  fontWeight: 500,
+  background: "transparent",
   fontSize: "0.875rem",
+  fontWeight: 500,
+  padding: 0,
 };
 
 const outlinedStyle = {
+  background: "transparent",
   border: "1px solid var(--font-primary)",
   padding: "10px 20px",
 };
@@ -44,11 +44,7 @@ export default function LinkButton({
       to={to}
       style={{
         minWidth,
-        ...(secondary
-          ? secondaryStyle
-          : outlined
-          ? outlinedStyle
-          : primaryStyle),
+        ...(secondary ? secondaryStyle : outlined ? outlinedStyle : undefined),
       }}
     >
       {children}

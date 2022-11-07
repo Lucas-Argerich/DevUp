@@ -35,7 +35,22 @@ type Props = {
   icon?: JSX.Element;
   minWidth?: number;
   onClick?: () => void;
+  outlined?: boolean;
+  secondary?: boolean;
   type?: "submit" | "reset" | "button";
+};
+
+const secondaryStyle = {
+  background: "transparent",
+  fontSize: "0.875rem",
+  fontWeight: 500,
+  padding: 0,
+};
+
+const outlinedStyle = {
+  background: "transparent",
+  border: "1px solid var(--font-primary)",
+  padding: "10px 20px",
 };
 
 export default function Button({
@@ -43,10 +58,19 @@ export default function Button({
   icon,
   minWidth,
   onClick,
+  outlined,
+  secondary,
   type,
 }: Props) {
   return (
-    <StyledButton onClick={onClick} style={{ minWidth }} type={type}>
+    <StyledButton
+      onClick={onClick}
+      style={{
+        minWidth,
+        ...(secondary ? secondaryStyle : outlined ? outlinedStyle : undefined),
+      }}
+      type={type}
+    >
       {icon && <IconContainer>{icon}</IconContainer>}
       <Span>{children}</Span>
     </StyledButton>
