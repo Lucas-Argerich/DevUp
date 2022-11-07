@@ -46,7 +46,7 @@ export default function Login() {
           icon={<GithubIcon />}
           minWidth={buttonMinWidth}
         >
-          Sign in with Github
+          Sign In with Github
         </Button>
         <Button
           onClick={() => {
@@ -55,10 +55,10 @@ export default function Login() {
           icon={<GoogleIcon />}
           minWidth={buttonMinWidth}
         >
-          Sign in with Google
+          Sign In with Google
         </Button>
         <LinkButton minWidth={buttonMinWidth} to="email">
-          Sign in with Email
+          Sign In with Email
         </LinkButton>
         <StyledLink to="/register">
           Don’t have an account? <span>Sign Up</span>

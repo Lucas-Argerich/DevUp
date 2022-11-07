@@ -10,8 +10,8 @@ import RequireAuth from "./components/RequireAuth";
 import Root from "./pages/Root";
 import User from "./pages/User";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import EmailRegisterForm from "./components/emailRegisterForm";
-import EmailLoginForm from "./components/emailLoginForm";
+import EmailRegister from "./pages/EmailRegister";
+import EmailLogin from "./pages/EmailLogin";
 
 const router = createBrowserRouter([
   {
@@ -24,14 +24,14 @@ const router = createBrowserRouter([
         path: "login",
         children: [
           { index: true, element: <Login /> },
-          { path: "email", element: <EmailLoginForm /> },
+          { path: "email", element: <EmailLogin /> },
         ],
       },
       {
         path: "register",
         children: [
           { index: true, element: <Register /> },
-          { path: "email", element: <EmailRegisterForm /> },
+          { path: "email", element: <EmailRegister /> },
         ],
       },
       {

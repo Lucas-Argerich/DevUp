@@ -78,7 +78,7 @@ export default function Register() {
           <span>or</span>
         </Separator>
         <LinkButton minWidth={buttonMinWidth} to="email">
-          Sign in with Email
+          Sign Up with Email
         </LinkButton>
         <StyledLink to="/login">
           Don’t have an account? <span>Sign Up</span>
