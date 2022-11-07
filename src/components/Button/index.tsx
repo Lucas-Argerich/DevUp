@@ -34,13 +34,20 @@ type Props = {
   children: string;
   icon?: JSX.Element;
   minWidth?: number;
-  onClick: () => void;
+  onClick?: () => void;
+  type?: "submit" | "reset" | "button";
 };
 
-export default function Button({ children, icon, minWidth, onClick }: Props) {
+export default function Button({
+  children,
+  icon,
+  minWidth,
+  onClick,
+  type,
+}: Props) {
   return (
-    <StyledButton onClick={onClick} style={{ minWidth }}>
-      <IconContainer>{icon}</IconContainer>
+    <StyledButton onClick={onClick} style={{ minWidth }} type={type}>
+      {icon && <IconContainer>{icon}</IconContainer>}
       <Span>{children}</Span>
     </StyledButton>
   );
