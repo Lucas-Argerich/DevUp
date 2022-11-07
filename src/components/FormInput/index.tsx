@@ -9,6 +9,7 @@ const Container = styled.div`
   justify-content: space-between;
   min-width: 400px;
   padding: 5px 10px;
+  width: 100%;
 `;
 
 const Label = styled.label`
