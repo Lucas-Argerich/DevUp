@@ -24,7 +24,7 @@ const IconContainer = styled.div`
   display: flex;
   height: 24px;
   justify-content: center;
-  left: 40px;
+  left: 30px;
   position: absolute;
   width: 24px;
 `;
