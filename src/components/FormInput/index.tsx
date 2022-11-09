@@ -5,7 +5,7 @@ const Container = styled.div`
   background: var(--color-gray);
   display: flex;
   flex-direction: column;
-  height: 60px;
+  height: 50px;
   justify-content: space-between;
   min-width: 400px;
   padding: 5px 10px;
@@ -20,7 +20,7 @@ const Label = styled.label`
 
 const Input = styled.input`
   background: transparent;
-  font-size: 0.9375rem;
+  font-size: 0.75rem;
   font-weight: 600;
 
   &::placeholder {
@@ -46,6 +46,10 @@ const labelStyleSecondary = {
   color: "var(--font-secondary)",
   fontSize: "0.75rem",
 };
+
+const inputStyleSecondary = {
+  fontSize: "0.9375rem"
+}
 
 export default function FormInput({
   autoComplete,
@@ -75,6 +79,7 @@ export default function FormInput({
         id={id}
         name={name}
         placeholder={placeholder}
+        style={value.length > 0 ? inputStyleSecondary : undefined}
         type={type}
         value={value}
       />
