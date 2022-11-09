@@ -41,6 +41,9 @@ const Separator = styled.div`
 `;
 
 const StyledLink = styled(Link)`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   font-size: 0.9375rem;
 
   span {
@@ -81,7 +84,8 @@ export default function Register() {
           Sign Up with Email
         </LinkButton>
         <StyledLink to="/login">
-          Don’t have an account? <span>Sign Up</span>
+          Already have an account?
+          <span>Sign In</span>
         </StyledLink>
       </Container>
     </>
