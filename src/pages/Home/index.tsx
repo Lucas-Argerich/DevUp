@@ -15,6 +15,12 @@ const Text = styled.span`
   text-align: center;
 `;
 
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+`
+
 export default function Home() {
   return (
     <>
@@ -25,10 +31,12 @@ export default function Home() {
           interact with each others!
         </Text>
       </Wrapper>
-      <LinkButton to="/register">Sign Up</LinkButton>
-      <LinkButton to="/login" secondary>
-        Sign In
-      </LinkButton>
+      <ButtonWrapper>
+        <LinkButton to="/register">Sign Up</LinkButton>
+        <LinkButton to="/login" secondary>
+          Sign In
+        </LinkButton>
+      </ButtonWrapper>
     </>
   );
 }
